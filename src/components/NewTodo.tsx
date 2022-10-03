@@ -17,7 +17,7 @@ export const NewTodo: React.FC<NewTodoProps> = ({ onAddTodo }) => {
   };
   return (
     <form onSubmit={submitHandler} className='w-[40rem] my-8 mx-auto'>
-      <label htmlFor='text' className='block font-bold mb-2'>
+      <label htmlFor='text' className='block font-bold mb-2 text-center '>
         Todo Text
       </label>
       <input
@@ -26,7 +26,7 @@ export const NewTodo: React.FC<NewTodoProps> = ({ onAddTodo }) => {
         ref={todoTextInputRef}
         className='block w-full text-2xl p-2 rounded-lg bg-[#f7f5ef] mb-2 border-b-2 '
       />
-      <button className='hover:bg-[#ebc002] active:border-[#ebc002] border-cyan-300 border-2 p-2'>
+      <button className='hover:bg-yellow active:border-yellow bg-yellow px-6 py-2 rounded-lg'>
         Add Todo
       </button>
     </form>
