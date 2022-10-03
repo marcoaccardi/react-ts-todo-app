@@ -16,3 +16,12 @@ export interface TodoItemProps {
   text: string;
   onRemoveTodo: () => void;
 }
+export interface TodoContextProps {
+  items: Todo[];
+  addTodo: (enteredText: string) => void;
+  removeTodo: (itemID: string) => void;
+}
+
+export interface TodosContextProviderProps {
+  children: React.ReactNode;
+}

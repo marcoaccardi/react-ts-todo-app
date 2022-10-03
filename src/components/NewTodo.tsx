@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
-import { NewTodoProps } from "../models/todo";
+import React, { useRef, useContext } from "react";
 
-export const NewTodo: React.FC<NewTodoProps> = ({ onAddTodo }) => {
+import { TodosContext } from "../store/TodoContext";
+
+export const NewTodo: React.FC = () => {
+  const todosCtx = useContext(TodosContext);
   const todoTextInputRef = useRef<HTMLInputElement>(null);
-
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
     // -current!value- it will never be "null" I'm certain that it will not be null
@@ -13,7 +14,7 @@ export const NewTodo: React.FC<NewTodoProps> = ({ onAddTodo }) => {
       // throw an error if nothing was entered when we submit
       return;
     }
-    onAddTodo(enteredText);
+    todosCtx.addTodo(enteredText);
   };
   return (
     <form onSubmit={submitHandler} className='w-[40rem] my-8 mx-auto'>
