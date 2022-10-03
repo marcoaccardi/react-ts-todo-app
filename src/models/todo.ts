@@ -12,3 +12,7 @@ export class Todo {
 export interface NewTodoProps {
   onAddTodo: (enteredText: string) => void;
 }
+export interface TodoItemProps {
+  text: string;
+  onRemoveTodo: () => void;
+}
