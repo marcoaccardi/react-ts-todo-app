@@ -9,12 +9,13 @@ export const NewTodo: React.FC = () => {
     event.preventDefault();
     // -current!value- it will never be "null" I'm certain that it will not be null
     // ?current optional property, it could be "null" try to get the value if null, store null
-    const enteredText = todoTextInputRef.current!.value;
+    let enteredText = todoTextInputRef.current!.value;
     if (enteredText.trim().length === 0) {
       // throw an error if nothing was entered when we submit
       return;
     }
     todosCtx.addTodo(enteredText);
+    todoTextInputRef.current!.value = "";
   };
   return (
     <form onSubmit={submitHandler} className='w-[40rem] my-8 mx-auto'>
